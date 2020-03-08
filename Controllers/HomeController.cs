@@ -55,7 +55,7 @@ namespace WebCore测试1VS2019.Controllers
             HomeDetaViewModel homeDetaViewModel = new HomeDetaViewModel()
             {
                 Student = _studentRepository.GetStudent(1),
-                PageTitle = "学生详情（Home下Deta视图的数据模型提供）"
+                PageTitle = "学生详情（视图Home下Deta视图的数据模型提供）"
             };
 
             return View(homeDetaViewModel);
