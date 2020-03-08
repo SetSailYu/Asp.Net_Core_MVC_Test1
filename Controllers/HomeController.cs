@@ -37,7 +37,6 @@ namespace WebCore测试1VS2019.Controllers
             Student model = _studentRepository.GetStudent(1);
             return new ObjectResult(model);
 
-            // return View();
             //return Json(new { id="1",name="张三" });
         }
 
