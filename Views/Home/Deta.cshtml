@@ -1,0 +1,44 @@
+﻿@*@using WebCore测试1VS2019.Models*@
+@*@model WebCore测试1VS2019.Models.Student*@
+@model WebCore测试1VS2019.ViewModels.HomeDetaViewModel
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+    @*<h3>@ViewData["PageTitle"]</h3>*@
+    @*<h3>@ViewBag.PageTitle</h3>*@
+    <h3>@Model.PageTitle</h3>
+
+    @*@{
+            var student = ViewData["Student"] as Student;
+        }*@
+
+    <div>
+        @*姓名 ：@student.Name*@
+        @*姓名 ：@ViewBag.Student.Name*@
+        @*姓名 ：@Model.Name*@
+        姓名 ：@Model.Student.Name
+
+    </div>
+
+    <div>
+        @*年级 ：@student.ClassName*@
+        @*年级 ：@ViewBag.Student.ClassName*@
+        @*年级 ：@Model.ClassName*@
+        年级 ：@Model.Student.ClassName
+    </div>
+
+    <div>
+        @*邮箱 ：@student.Email*@
+        @*邮箱 ：@ViewBag.Student.Email*@
+        @*邮箱 ：@Model.Email*@
+        邮箱 ：@Model.Student.Email
+    </div>
+
+</body>
+</html>
