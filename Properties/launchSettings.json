@@ -1,4 +1,4 @@
-﻿{
+{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
@@ -12,32 +12,24 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "MyKey": "appsetting.launchSetting.json IIS Express MyKey"
+        "MyKey": "appsetting.launchSetting.json IIS Express MyKey",
+        "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
     "WebCore测试1VS2019": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "MyKey": "appsetting.launchSetting.json Project MyKey"
-      }
+        "MyKey": "appsetting.launchSetting.json Project MyKey",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:5000"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "publishAllPorts": true
     }
   }
 }
-
-/**   环境变量配置 “ASPNETCORE_ENVIRONMENT”： 
-  *         Development  开发环境
-  *         Staging      模拟环境
-  *         Production   生产环境
-  *
-  *
-  *   运行进程 “commandName”：
-  *         IISExpress/w3wp  进程内托管
-  *         Project          进程外托管
-  *
-  */
-
-

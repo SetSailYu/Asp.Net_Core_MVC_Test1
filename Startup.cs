@@ -41,8 +41,9 @@ namespace WebCore测试1VS2019
             services.AddControllersWithViews().AddXmlSerializerFormatters();
             //.AddXmlSerializerFormatters()将请求的数据序列化为xml格式
 
-            // 学生管理服务依赖注入
+            // 注册学生管理服务（依赖注入）
             services.AddSingleton<IStudentRepository, MockStudentRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -13,6 +13,7 @@ namespace WebCore测试1VS2019.Controllers
     /// </summary>
     public class HomeController : Controller
     {
+
         private readonly IStudentRepository _studentRepository;
 
         // 使用构造函数注入的方式注入IStudentRepository
@@ -28,7 +29,6 @@ namespace WebCore测试1VS2019.Controllers
         public IActionResult Index()
         {
             IEnumerable<Student> model = _studentRepository.GetAllStudents();
-
             return View(model);
         }
 
