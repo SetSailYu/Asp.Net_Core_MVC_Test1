@@ -81,8 +81,9 @@ namespace WebCore测试1VS2019
             //defaultFilesOptions.DefaultFileNames.Add("test.html");
             //// 添加默认文件中间件(必须注册在静态文件中间件和UseRouting之前)   // index.html  index.htm 默认  default.html  default.htm
             //app.UseDefaultFiles(defaultFilesOptions);
-            //// 添加静态文件中间件
-            //app.UseStaticFiles();
+
+            // 添加静态文件中间件（少了它将无法访问wwwroot下的文件）
+            app.UseStaticFiles();
 
             // 配合UseFileServer中间件的配置设置
             //FileServerOptions fileServerOptions = new FileServerOptions();

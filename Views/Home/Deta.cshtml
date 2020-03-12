@@ -1,44 +1,65 @@
 ﻿@*@using WebCore测试1VS2019.Models*@
 @*@model WebCore测试1VS2019.Models.Student*@
-@model WebCore测试1VS2019.ViewModels.HomeDetaViewModel
+@model HomeDetaViewModel
 
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
+@{
+    ViewBag.Title = "学生详情信息页面";
+}
 
-    @*<h3>@ViewData["PageTitle"]</h3>*@
-    @*<h3>@ViewBag.PageTitle</h3>*@
-    <h3>@Model.PageTitle</h3>
+@*<h3>@ViewData["PageTitle"]</h3>*@
+@*<h3>@ViewBag.PageTitle</h3>*@
+<h3>@Model.PageTitle</h3>
 
-    @*@{
-            var student = ViewData["Student"] as Student;
-        }*@
+@*@{
+        var student = ViewData["Student"] as Student;
+    }*@
+@*<div>*@
+    @*姓名 ：@student.Name*@
+    @*姓名 ：@ViewBag.Student.Name*@
+    @*姓名 ：@Model.Name*@
+    @*姓名 ：@Model.Student.Name*@
+@*</div>
+<div>*@
+    @*年级 ：@student.ClassName*@
+    @*年级 ：@ViewBag.Student.ClassName*@
+    @*年级 ：@Model.ClassName*@
+    @*年级 ：@Model.Student.ClassName*@
+@*</div>
+<div>*@
+    @*邮箱 ：@student.Email*@
+    @*邮箱 ：@ViewBag.Student.Email*@
+    @*邮箱 ：@Model.Email*@
+    @*邮箱 ：@Model.Student.Email*@
+@*</div>*@
 
-    <div>
-        @*姓名 ：@student.Name*@
-        @*姓名 ：@ViewBag.Student.Name*@
-        @*姓名 ：@Model.Name*@
-        姓名 ：@Model.Student.Name
 
+<div class="row justify-content-center m-3">
+    <div class="col-sm-8">
+        <div class="card">
+
+            <div class="card-header">
+                <h1>@Model.Student.Name</h1>
+            </div>
+
+            <div class="card-body text-center">
+                <img class="card-img-top" src="~/images/baoerjie.png" asp-append-version="true"/>
+
+                <h4>学生ID：@Model.Student.Id</h4>
+                <h4>年级：@Model.Student.ClassName</h4>
+                <h4>邮箱：@Model.Student.Email</h4>
+            </div>
+
+            <div class="card-footer text-center">
+                <a asp-controller="home" asp-action="index" class="btn btn-primary">返回</a>
+                <a href="#" class="btn btn-primary">编辑</a>
+                <a href="#" class="btn btn-danger">删除</a>
+            </div>
+
+        </div>
     </div>
+</div>
 
-    <div>
-        @*年级 ：@student.ClassName*@
-        @*年级 ：@ViewBag.Student.ClassName*@
-        @*年级 ：@Model.ClassName*@
-        年级 ：@Model.Student.ClassName
-    </div>
 
-    <div>
-        @*邮箱 ：@student.Email*@
-        @*邮箱 ：@ViewBag.Student.Email*@
-        @*邮箱 ：@Model.Email*@
-        邮箱 ：@Model.Student.Email
-    </div>
 
-</body>
-</html>
+

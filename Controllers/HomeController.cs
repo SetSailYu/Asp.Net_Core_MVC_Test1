@@ -32,15 +32,15 @@ namespace WebCore测试1VS2019.Controllers
             return View(model);
         }
 
-        public ObjectResult Details()
+        public ObjectResult Details(int id)
         {
-            Student model = _studentRepository.GetStudent(1);
+            Student model = _studentRepository.GetStudent(id);
             return new ObjectResult(model);
 
             //return Json(new { id="1",name="张三" });
         }
 
-        public IActionResult Deta()
+        public IActionResult Deta(int? id)
         {
             //Student model = _studentRepository.GetStudent(1);
 
@@ -54,7 +54,7 @@ namespace WebCore测试1VS2019.Controllers
 
             HomeDetaViewModel homeDetaViewModel = new HomeDetaViewModel()
             {
-                Student = _studentRepository.GetStudent(1),
+                Student = _studentRepository.GetStudent(id??1),
                 PageTitle = "学生详情（视图Home下Deta视图的数据模型提供）"
             };
 
