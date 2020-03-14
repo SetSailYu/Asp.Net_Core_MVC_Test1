@@ -13,7 +13,7 @@
       "launchBrowser": true,
       "environmentVariables": {
         "MyKey": "appsetting.launchSetting.json IIS Express MyKey",
-        "ASPNETCORE_ENVIRONMENT": "Staging"
+        "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
     "WebCore测试1VS2019": {

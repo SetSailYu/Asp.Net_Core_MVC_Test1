@@ -106,3 +106,4 @@ F:\C#项目\WebCore测试1VS2019\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.
 F:\C#项目\WebCore测试1VS2019\obj\Debug\netcoreapp3.1\Razor\Views\Home\_ViewStart.cshtml.g.cs
 F:\C#项目\WebCore测试1VS2019\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 F:\C#项目\WebCore测试1VS2019\bin\Debug\netcoreapp3.1\libman.json
+F:\C#项目\WebCore测试1VS2019\obj\Debug\netcoreapp3.1\Razor\Views\Home\Create.cshtml.g.cs

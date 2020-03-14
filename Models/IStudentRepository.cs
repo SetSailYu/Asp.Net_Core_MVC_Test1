@@ -22,5 +22,12 @@ namespace WebCore测试1VS2019.Models
         /// </summary>
         /// <returns></returns>
         IEnumerable<Student> GetAllStudents();
+
+        /// <summary>
+        /// 添加学生信息
+        /// </summary>
+        /// <param name="student"></param>
+        /// <returns></returns>
+        Student Add(Student student);
     }
 }

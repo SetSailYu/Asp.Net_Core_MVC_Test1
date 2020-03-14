@@ -41,7 +41,7 @@ namespace WebCore测试1VS2019
             services.AddControllersWithViews().AddXmlSerializerFormatters();
             //.AddXmlSerializerFormatters()将请求的数据序列化为xml格式
 
-            // 注册学生管理服务（依赖注入）
+            // 注册学生管理服务（单例依赖注入）
             services.AddSingleton<IStudentRepository, MockStudentRepository>();
 
         }
