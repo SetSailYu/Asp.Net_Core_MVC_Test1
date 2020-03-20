@@ -35,5 +35,29 @@ namespace WebCore测试1VS2019.Models
             _studentList.Add(student);
             return student;
         }
+
+        public Student Update(Student updateStudent)
+        {
+            Student student = _studentList.FirstOrDefault(s => s.Id == updateStudent.Id);
+            if (student != null)
+            {
+                student.Name = updateStudent.Name;
+                student.ClassName = updateStudent.ClassName;
+                student.Email = updateStudent.Email;
+            }
+
+            return student;
+        }
+
+        public Student Delete(int id)
+        {
+            Student student = _studentList.FirstOrDefault(s => s.Id == id);
+            if (student != null)
+            {
+                _studentList.Remove(student);
+            }
+
+            return student;
+        }
     }
 }

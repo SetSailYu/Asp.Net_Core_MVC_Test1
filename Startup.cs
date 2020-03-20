@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -28,6 +29,12 @@ namespace WebCore测试1VS2019
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            // 使用DbcontextPool数据库连接池连接数据库（依赖注入）
+            services.AddDbContextPool<AppDbContext>(
+                options => options.UseSqlServer(_configuration.GetConnectionString("StudentDbConnection"))
+                );
+
+
             // ※步骤1：将所需的MVC服务添加到asp.net core 中的依赖注入容器中。
 
             /**
@@ -42,7 +49,15 @@ namespace WebCore测试1VS2019
             //.AddXmlSerializerFormatters()将请求的数据序列化为xml格式
 
             // 注册学生管理服务（单例依赖注入）
-            services.AddSingleton<IStudentRepository, MockStudentRepository>();
+            //services.AddSingleton<IStudentRepository, MockStudentRepository>();
+            services.AddScoped<IStudentRepository, SQLStudentRepository>();
+            /***
+             *      服务类型               同一个Http请求的范围内          横跨多个不同Http请求
+             *    Scoped Service                同一个实例                       新实列
+             *    Transient Service             新实列                           新实列
+             *    Singleton Service             同一个实列                       同一个实列
+             * 
+             */
 
         }
 

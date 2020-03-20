@@ -24,10 +24,24 @@ namespace WebCore测试1VS2019.Models
         IEnumerable<Student> GetAllStudents();
 
         /// <summary>
-        /// 添加学生信息
+        /// 添加一名学生信息
         /// </summary>
         /// <param name="student"></param>
         /// <returns></returns>
         Student Add(Student student);
+
+        /// <summary>
+        /// 修改一名学生的信息
+        /// </summary>
+        /// <param name="updateStudent"></param>
+        /// <returns></returns>
+        Student Update(Student updateStudent);
+
+        /// <summary>
+        /// 删除一名学生的信息
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Student Delete(int id);
     }
 }
