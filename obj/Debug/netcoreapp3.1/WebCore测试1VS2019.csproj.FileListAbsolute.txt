@@ -138,3 +138,4 @@ F:\C#项目\WebCore测试1VS2019\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcor
 F:\C#项目\WebCore测试1VS2019\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 F:\C#项目\WebCore测试1VS2019\obj\Debug\netcoreapp3.1\WebCore测试1VS2019.AssemblyInfoInputs.cache
 F:\C#项目\WebCore测试1VS2019\obj\Debug\netcoreapp3.1\WebCore测试1VS2019.AssemblyInfo.cs
+F:\C#项目\WebCore测试1VS2019\obj\Debug\netcoreapp3.1\Razor\Views\Home\Edit.cshtml.g.cs

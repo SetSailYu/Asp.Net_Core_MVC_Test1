@@ -13,11 +13,6 @@ namespace WebCore测试1VS2019.ViewModels
         // Display 显示
 
         /// <summary>
-        /// 学号
-        /// </summary>
-        public int Id { get; set; }
-
-        /// <summary>
         /// 姓名
         /// </summary>
         [Display(Name = "姓名")]

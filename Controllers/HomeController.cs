@@ -120,10 +120,10 @@ namespace WebCore测试1VS2019.Controllers
                     // 获取上传的文件名
                     string untrustedFileName = Path.GetFileName(model.Photo.FileName);
                     // 返回指定图片的后缀
-                    //string fileext1 = System.IO.Path.GetExtension(untrustedFileName);
+                    string fileext1 = System.IO.Path.GetExtension(untrustedFileName);
                     // 编码命名文件
                     //uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Photo.FileName;
-                    uniqueFileName = DateTime.Now.ToString("yyyyMMddHHffss") + "_" + untrustedFileName;
+                    uniqueFileName = DateTime.Now.ToString("yyyyMMddHHffss") + "_" + Guid.NewGuid().ToString() + "_" + fileext1;
                     // 获取文件路径
                     string filePath = Path.Combine(uploadsFolder, uniqueFileName);
                     // 使用IFormFile接口提供的CopyTo()方法将文件复制到wwwroot/images文件夹
@@ -144,5 +144,31 @@ namespace WebCore测试1VS2019.Controllers
             return View();
         }
 
+        /// <summary>
+        /// 编辑学生信息页面加载 获取学生信息
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public ViewResult Edit(int id)
+        {
+            Student student = _studentRepository.GetStudent(id);
+            if (student != null)
+            {
+                StudentEditViewModel studentEditViewModel = new StudentEditViewModel
+                {
+                    Id = student.Id,
+                    Name = student.Name,
+                    ClassName = student.ClassName,
+                    Email = student.Email,
+                    ExistingPhotoPath = student.PhotoPath
+                };
+
+                return View(studentEditViewModel);
+            }
+
+            throw new Exception("查询不到这个学生信息");
+            //return View();
+        }
     }
 }
