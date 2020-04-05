@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace WebCore测试1VS2019.Models
 {
+    /// <summary>
+    /// 学生信息类仓库(数据库操作)
+    /// </summary>
     public class SQLStudentRepository : IStudentRepository
     {
         private readonly AppDbContext _context;

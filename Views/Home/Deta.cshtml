@@ -5,6 +5,7 @@
 
 @{
     ViewBag.Title = "学生详情信息页面";
+    var photoPath = "~/images/" + (Model.Student.PhotoPath ?? "baoerjie.png");
 }
 
 @*<h3>@ViewData["PageTitle"]</h3>*@
@@ -43,7 +44,7 @@
             </div>
 
             <div class="card-body text-center">
-                <img class="card-img-top" src="~/images/baoerjie.png" asp-append-version="true"/>
+                <img class="card-img-top" src="@photoPath" asp-append-version="true"/>
 
                 <h4>学生ID：@Model.Student.Id</h4>
                 <h4>年级：@Model.Student.ClassName</h4>

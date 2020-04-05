@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace WebCore测试1VS2019.Models
 {
+    /// <summary>
+    /// EF Core 操作数据库核心
+    /// </summary>
     public class AppDbContext: DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)

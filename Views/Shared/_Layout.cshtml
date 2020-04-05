@@ -31,14 +31,14 @@
     @*<h2>_Layout</h2>*@
 
     <div class="container">
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark mt-lg-5" >
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark mt-lg-5">
             <a class="navbar-brand " href="/">
                 @*<img src="" width="30" height="30" alt="Alternate Text"/>*@
                 <i class="iconfont icon-xuesheng" style="width:30px; height:30px;"></i>
             </a>
             @*<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>*@
+                    <span class="navbar-toggler-icon"></span>
+                </button>*@
 
             <div id="collapsibleNavbar" class="collapse navbar-collapse">
                 <ul class="navbar-nav">
@@ -54,6 +54,7 @@
         @RenderBody()
     </div>
 
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     @RenderSection("Scripts", required: false)
 
 </body>

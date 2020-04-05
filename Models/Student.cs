@@ -40,6 +40,12 @@ namespace WebCore测试1VS2019.Models
         [RegularExpression(@"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$",
             ErrorMessage = "邮箱的格式不正确")]
         public string Email { get; set; }
+
+        /// <summary>
+        /// 图片地址
+        /// </summary>
+        [Display(Name = "图片地址")]
+        public string PhotoPath { get; set; }
     }
 
     /***                  模型验证
