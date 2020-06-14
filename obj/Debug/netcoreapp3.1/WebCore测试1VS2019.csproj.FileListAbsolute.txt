@@ -98,7 +98,6 @@ F:\C#项目\WebCore测试1VS2019\obj\Debug\netcoreapp3.1\Razor\Views\Home\Deta.c
 F:\C#项目\WebCore测试1VS2019\obj\Debug\netcoreapp3.1\WebCore测试1VS2019.RazorTargetAssemblyInfo.cs
 F:\C#项目\WebCore测试1VS2019\obj\Debug\netcoreapp3.1\WebCore测试1VS2019.Views.pdb
 F:\C#项目\WebCore测试1VS2019\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-F:\C#项目\WebCore测试1VS2019\obj\Debug\netcoreapp3.1\WebCore测试1VS2019.MvcApplicationPartsAssemblyInfo.cache
 F:\C#项目\WebCore测试1VS2019\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 F:\C#项目\WebCore测试1VS2019\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 F:\C#项目\WebCore测试1VS2019\obj\Debug\netcoreapp3.1\Razor\Views\Home\_ViewStart.cshtml.g.cs
@@ -139,3 +138,4 @@ F:\C#项目\WebCore测试1VS2019\bin\Debug\netcoreapp3.1\runtimes\win\lib\netsta
 F:\C#项目\WebCore测试1VS2019\obj\Debug\netcoreapp3.1\WebCore测试1VS2019.AssemblyInfoInputs.cache
 F:\C#项目\WebCore测试1VS2019\obj\Debug\netcoreapp3.1\WebCore测试1VS2019.AssemblyInfo.cs
 F:\C#项目\WebCore测试1VS2019\obj\Debug\netcoreapp3.1\Razor\Views\Home\Edit.cshtml.g.cs
+F:\C#项目\WebCore测试1VS2019\obj\Debug\netcoreapp3.1\WebCore测试1VS2019.MvcApplicationPartsAssemblyInfo.cache

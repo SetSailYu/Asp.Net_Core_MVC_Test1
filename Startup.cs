@@ -19,6 +19,8 @@ namespace WebCore测试1VS2019
         // 依赖注入注册  （可用于 访问配置信息）
         //     IConfiguration 配置接口
         private readonly IConfiguration _configuration ;
+        //     CORS 跨域请求接口名称设置
+        private readonly string MyAllowSpecificOrigins = "MyPolicy";
 
         public Startup(IConfiguration configuration)
         {
@@ -29,6 +31,27 @@ namespace WebCore测试1VS2019
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+
+            #region 跨域
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                    builder =>
+                    {
+                        //builder.WithOrigins("https://localhost:44390", "http://0.0.0.0:3201").AllowAnyHeader();
+                        //builder.WithOrigins(urls) // 允许部分站点跨域请求
+                        //builder.WithOrigins("https://localhost:8081", "http://192.168.1.105:8081", "http://localhost:2669")
+                        builder.WithOrigins("http://localhost:8081", "http://192.168.1.105:8081", "http://localhost:2669")
+                                //.AllowAnyOrigin() // 允许所有站点跨域请求（net core2.2版本后将不适用）
+                                .SetIsOriginAllowed(t => true) // 允许所有站点跨域请求
+                                .AllowAnyMethod() // 允许所有请求方法
+                                .AllowAnyHeader() // 允许所有请求头
+                                .AllowCredentials(); // 允许Cookie信息
+                    });
+            });
+            services.AddControllers();
+            #endregion 跨域
+
             // 使用DbcontextPool数据库连接池连接数据库（依赖注入）
             services.AddDbContextPool<AppDbContext>(
                 options => options.UseSqlServer(_configuration.GetConnectionString("StudentDbConnection"))
@@ -89,31 +112,40 @@ namespace WebCore测试1VS2019
              *  UseFileServer 结合了 UseStaticFiles，UseDefaultFiles 和 UseDirectoryBrowser 中间件的功能
              *  UseDirectoryBrowser() 网页自身浏览器目录预览（暴露项目文件配置）(不推荐)
              */
-
+            /**
             //// 指定默认文件中间件打开的页面
             //DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
             //defaultFilesOptions.DefaultFileNames.Clear();  // 清除默认配置
             //defaultFilesOptions.DefaultFileNames.Add("test.html");
             //// 添加默认文件中间件(必须注册在静态文件中间件和UseRouting之前)   // index.html  index.htm 默认  default.html  default.htm
             //app.UseDefaultFiles(defaultFilesOptions);
+            */
 
             // 添加静态文件中间件（少了它将无法访问wwwroot下的文件）
             app.UseStaticFiles();
 
+            /**
             // 配合UseFileServer中间件的配置设置
             //FileServerOptions fileServerOptions = new FileServerOptions();
             //fileServerOptions.DefaultFilesOptions.DefaultFileNames.Clear();
             //fileServerOptions.DefaultFilesOptions.DefaultFileNames.Add("test.html");
             // 等同于 UseDefailtFiles() + UseStaticFiles() + UseDirectoryBrowser()
             //app.UseFileServer();
+            */
 
+            #region 跨域
+            app.UseCors(MyAllowSpecificOrigins);
+            #endregion
 
+            // 它是用来标记路由决策在请求管道里发生的位置，也就是在这里会选择端点
             app.UseRouting();
+
+            
 
             /**
              *  .NET Core 3.0
              */
-            //app.UseAuthorization();
+            app.UseAuthorization();
 
             //  ※步骤2：添加MVC中间件到我们的请求处理管道中。
             /**
@@ -121,6 +153,7 @@ namespace WebCore测试1VS2019
              */
             //app.UseMvcWithDefaultRoute();
 
+            // 它是用来标记选择好的端点在请求管道的什么地方来执行
             app.UseEndpoints(endpoints =>
             {
                 /**
